@@ -1,0 +1,57 @@
+# --- Node & package managers ---
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# --- Build / caches ---
+dist/
+build/
+.cache/
+.eslintcache
+vite.config.timestamp-*.mjs
+*.tsbuildinfo
+
+# --- Logs ---
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# --- Env files ---
+.env
+.env.*
+!.env.example
+client/.env
+client/.env.*
+!client/.env.example
+server/.env
+server/.env.*
+!server/.env.example
+
+# --- Test/coverage/artifacts ---
+coverage/
+.cypress/
+playwright-report/
+*.snap
+*.lcov
+
+# --- OS / Editors ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# --- App-specific scratch ---
+tmp/
+temp/
+uploads/
+storage/

@@ -1,0 +1,63 @@
+# ------------------------------------
+# 📂 React/JavaScript/TypeScript Defaults
+# ------------------------------------
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+
+# Production Build & Output
+/build          # CRA build output
+/dist           # Generic build output (e.g., Vite, Webpack)
+/dist-ssr
+/out            # Next.js build output
+/public/dist    # Static assets build output
+*.local
+
+# Dependency Lock Files (uncomment as needed)
+# package-lock.json
+# npm-shrinkwrap.json
+# pnpm-lock.yaml
+
+# Environment Variables (CRITICAL for security)
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Code Quality & Testing
+/coverage       # Test coverage reports
+.eslintcache    # ESLint cache
+.babelcache.json
+# jest.config.js # Only if you generate a custom config file that you don't want to track
+
+# ------------------------------------
+# 💻 Editor directories and files
+# ------------------------------------
+.vscode/*
+!.vscode/extensions.json  # Allows sharing recommended extensions
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
