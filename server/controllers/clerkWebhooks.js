@@ -18,6 +18,7 @@ export const clerkWebhooks = async (req, res) => {
 
     // Extract body
     const { data, type } = req.body;
+    console.log(req.body);
 
     // Construct User Data for MongoDB
     const userData = {
