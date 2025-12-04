@@ -1,0 +1,13 @@
+import express from "express";
+import { protect } from "../middleware/auth.middleware.js";
+import {
+  getUserData,
+  storeRecentSearchedCities,
+} from "../controllers/user.controller.js";
+
+const userRouter = express.Router();
+
+userRouter.get("/", protect, getUserData);
+userRouter.post("/store-Recent-Search", protect, storeRecentSearchedCities);
+
+export default userRouter;
