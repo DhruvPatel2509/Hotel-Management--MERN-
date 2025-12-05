@@ -1,4 +1,5 @@
 import { assets } from "../assets/assets";
+import Title from "./Title";
 
 const NewsLet = () => {
   return (
