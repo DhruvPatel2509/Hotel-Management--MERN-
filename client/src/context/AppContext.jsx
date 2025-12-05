@@ -10,6 +10,8 @@ axios.defaults.withCredentials = true;
 
 const AppContext = createContext();
 
+console.log(import.meta.env.VITE_BACKEND_UR);
+
 export const AppProvider = ({ children }) => {
   const currency = import.meta.env.VITE_CURRENCY || "$";
   const navigate = useNavigate();
@@ -60,9 +62,9 @@ export const AppProvider = ({ children }) => {
     if (user) fetchUser();
   }, [user]);
 
-   useEffect(() => {
-    fetchRooms()
-   }, [ ]);
+  useEffect(() => {
+    fetchRooms();
+  }, []);
 
   const value = {
     currency,

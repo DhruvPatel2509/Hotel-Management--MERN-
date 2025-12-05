@@ -23,11 +23,13 @@ const app = express();
 // 2. Connect Infrastructure
 connectDB();
 connectCloudinary();
+const Frontendurl = process.env.FRONTEND_URL;
+console.log(`Frontendurl= ${Frontendurl}`);
 
 // 3. CORS Configuration
 app.use(
   cors({
-    origin: "http://localhost:5173", // Ensure this matches your frontend port exactly
+    origin: Frontendurl, // Ensure this matches your frontend port exactly
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
