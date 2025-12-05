@@ -7,8 +7,7 @@ import RoomDetails from "./pages/RoomDetails";
 import MyBookings from "./pages/MyBooking";
 import { Toaster } from "react-hot-toast";
 
-import { useEffect } from "react";
-import { useAuth } from "@clerk/clerk-react";
+
 import Hotelreg from "./pages/Hotelreg";
 import AddRoom from "./pages/AddRoom";
 import About from "./pages/About";
@@ -16,7 +15,7 @@ import About from "./pages/About";
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
 
-  const { getToken } = useAuth();
+  // const { getToken } = useAuth();
 
   // 🔥 Console log Clerk Token for Postman
   // useEffect(() => {
