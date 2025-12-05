@@ -15,21 +15,7 @@ import About from "./pages/About";
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
 
-  // const { getToken } = useAuth();
-
-  // 🔥 Console log Clerk Token for Postman
-  // useEffect(() => {
-  //   async function showToken() {
-  //     try {
-  //       const token = await getToken();
-  //       console.log("🔥 YOUR CLERK TOKEN:", token);
-  //     } catch (error) {
-  //       console.error("Error getting Clerk token:", error);
-  //     }
-  //   }
-
-  //   showToken();
-  // }, [getToken]);
+  
 
   return (
     <div>
