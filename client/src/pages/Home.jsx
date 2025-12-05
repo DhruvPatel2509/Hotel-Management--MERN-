@@ -12,7 +12,6 @@ const Home = () => {
       <FeaturedDestination />
       <Testimonial />
       <Newsletter />
-
     </>
   );
 };

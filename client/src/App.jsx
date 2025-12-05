@@ -19,18 +19,18 @@ const App = () => {
   const { getToken } = useAuth();
 
   // 🔥 Console log Clerk Token for Postman
-  useEffect(() => {
-    async function showToken() {
-      try {
-        const token = await getToken();
-        console.log("🔥 YOUR CLERK TOKEN:", token);
-      } catch (error) {
-        console.error("Error getting Clerk token:", error);
-      }
-    }
+  // useEffect(() => {
+  //   async function showToken() {
+  //     try {
+  //       const token = await getToken();
+  //       console.log("🔥 YOUR CLERK TOKEN:", token);
+  //     } catch (error) {
+  //       console.error("Error getting Clerk token:", error);
+  //     }
+  //   }
 
-    showToken();
-  }, [getToken]);
+  //   showToken();
+  // }, [getToken]);
 
   return (
     <div>
