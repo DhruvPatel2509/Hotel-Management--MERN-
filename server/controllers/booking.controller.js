@@ -1,5 +1,6 @@
 import Booking from "../model/Booking.js";
 import Hotel from "../model/Hotel.js";
+import Room from "../model/Room.js";
 
 const checkAvailability = async ({ checkInDate, checkOutDate, room }) => {
   try {
@@ -49,6 +50,8 @@ export const checkAvailabilityAPI = async (req, res) => {
 export const createBooking = async (req, res) => {
   try {
     const { room, checkInDate, checkOutDate, guests } = req.body;
+    console.log(req.body);
+
     const user = req.user._id;
 
     // ---------- Validate input ----------

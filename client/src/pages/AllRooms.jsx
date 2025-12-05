@@ -1,9 +1,10 @@
-import { assets, facilityIcons, roomsDummyData } from "../assets/assets";
-import { useNavigate } from "react-router-dom";
+import { assets, facilityIcons } from "../assets/assets";
+
 import StarRating from "../components/StarRating";
+import { useAppContext } from "../context/AppContext";
 
 const AllRooms = () => {
-  const navigate = useNavigate();
+  const { rooms, navigate } = useAppContext();
 
   return (
     <div
@@ -17,7 +18,7 @@ const AllRooms = () => {
           enhance your stay and create unforgettable memories.
         </p>
 
-        {roomsDummyData.map((room) => (
+        {rooms.map((room) => (
           <div
             key={room._id}
             className="flex flex-col md:flex-row items-start

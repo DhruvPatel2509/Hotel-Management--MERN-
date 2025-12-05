@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { assets } from "../assets/assets";
-import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
+import { useClerk, UserButton } from "@clerk/clerk-react";
+import { useAppContext } from "../context/AppContext";
 
 const BookIcon = () => (
   <svg
@@ -27,16 +28,17 @@ export const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Hotels", path: "/rooms" },
-    { name: "Experience   ", path: "/" },
-    { name: "About", path: "/" },
+
+    { name: "MyBookings", path: "/my-bookings" },
+    { name: "About", path: "/about" },
   ];
 
-  const navigate = useNavigate();
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { openSignIn } = useClerk();
-  const { user } = useUser();
+
+  const { user, navigate, isOwner, setShowHotelReg } = useAppContext();
 
   useEffect(() => {
     const isNotHome = location.pathname !== "/";
@@ -93,25 +95,27 @@ export const Navbar = () => {
             />
           </a>
         ))}
-        <button
-          onClick={() => navigate("/owner")}
-          className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${
-            isScrolled ? "text-black" : "text-white"
-          } transition-all`}
-        >
-          Dashboard
-        </button>
+        {/* {user && (
+          <button
+            onClick={() => navigate("/owner")}
+            className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${
+              isScrolled ? "text-black" : "text-white"
+            } transition-all`}
+          >
+            {isOwner ? 'Dashboard' : 'List Your Hotel'}
+          </button>
+        )} */}
       </div>
 
       {/* Desktop Right */}
       <div className="hidden md:flex items-center gap-4">
-        <img
+        {/* <img
           src={assets.searchIcon}
           alt=""
           className={`h-6 w-6 text-white transition-all duration-500 ${
             isScrolled ? "invert" : ""
           }`}
-        />
+        /> */}
 
         {user ? (
           <UserButton>
@@ -176,14 +180,14 @@ export const Navbar = () => {
           </a>
         ))}
 
-        {user && (
+        {/* {user && (
           <button
             className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all"
             onClick={() => navigate("/owner")}
           >
             Dashboard
           </button>
-        )}
+        )} */}
         {!user && (
           <button
             onClick={openSignIn}

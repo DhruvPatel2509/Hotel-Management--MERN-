@@ -2,8 +2,16 @@ import User from "../model/User.js";
 
 export const protect = async (req, res, next) => {
   try {
-    // Check if Clerk passed userId in req.auth
-    const { userId } = req.auth || {};
+    const auth = req.auth();
+    if (typeof req.auth === "function") {
+      console.log("3. Auth Object:", req.auth());
+    }
+    if (auth.debug) {
+      console.log("🛑 CLERK DEBUG REASON:", auth.debug());
+    }
+    const { userId } = req.auth();
+
+    console.log(userId);
 
     if (!userId) {
       return res.status(401).json({
